@@ -56,25 +56,25 @@ export const NavBar = () => {
               Skills
             </Nav.Link>
             <Nav.Link
-              href="#projects"
+              href="#project"
               className={
-                activeLink === "projects" ? "active navbar-link" : "navbar-link"
+                activeLink === "project" ? "active navbar-link" : "navbar-link"
               }
-              onClick={() => onUpdateActiveLink("projects")}
+              onClick={() => onUpdateActiveLink("project")}
             >
               Projects
             </Nav.Link>
           </Nav>
           <span className="navbar-text">
             <div className="social-icon">
-              <a href="#">
-                <img src={navIcon1} alt="" />
+              <a href="">
+                <img src={navIcon1} alt="icone linkedIn" />
               </a>
               <a href="#">
-                <img src={navIcon2} alt="" />
+                <img src={navIcon2} alt="icone facebook" />
               </a>
-              <a href="#">
-                <img src={navIcon3} alt="" />
+              <a href="">
+                <img src={navIcon3} alt="icone instagram" />
               </a>
             </div>
             <button className="vvd">
