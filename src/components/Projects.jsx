@@ -4,8 +4,8 @@ import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
-import TrackVisibility from "react-on-screen";
 import "animate.css";
+import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
   const projects = [
@@ -42,10 +42,10 @@ export const Projects = () => {
   ];
 
   return (
-    <section className="project" id="project">
+    <section className="project" id="projects">
       <Container>
         <Row>
-          <Col>
+          <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) => (
                 <div
@@ -55,11 +55,11 @@ export const Projects = () => {
                 >
                   <h2>Projects</h2>
                   <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Optio dignissimos maxime similique vero incidunt. Iste,
-                    voluptates libero unde corporis blanditiis perferendis
-                    aliquam animi ipsam repudiandae voluptas dolorem praesentium
-                    magni accusantium?
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book.
                   </p>
                 </div>
               )}
@@ -74,23 +74,48 @@ export const Projects = () => {
                   <Nav.Link eventKey="first">Tab 1</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="second">Tab 2</Nav.Link>
+                  <Nav.Link eventKey="section">Tab 2</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="third">Tab 3</Nav.Link>
                 </Nav.Item>
               </Nav>
-              <Tab.Content>
-                <Tab.Pane eventKey="first">
-                  <Row>
-                    {projects.map((project, index) => {
-                      return <ProjectCard key={index} {...project} />;
-                    })}
-                  </Row>
-                </Tab.Pane>
-                <Tab.Pane eventKey="second">Loren Ipsum</Tab.Pane>
-                <Tab.Pane eventKey="third">Loren Ipsum</Tab.Pane>
-              </Tab.Content>
+              <TrackVisibility>
+                {({ isVisible }) => (
+                  <Tab.Content
+                    id="slideInUp"
+                    className={
+                      isVisible ? "animate__animated animate__slideInUp" : ""
+                    }
+                  >
+                    <Tab.Pane eventKey="first">
+                      <Row>
+                        {projects.map((project, index) => {
+                          return <ProjectCard key={index} {...project} />;
+                        })}
+                      </Row>
+                    </Tab.Pane>
+                    <Tab.Pane eventKey="section">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Cumque quam, quod neque provident velit, rem explicabo
+                        excepturi id illo molestiae blanditiis, eligendi dicta
+                        officiis asperiores delectus quasi inventore debitis
+                        quo.
+                      </p>
+                    </Tab.Pane>
+                    <Tab.Pane eventKey="third">
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Cumque quam, quod neque provident velit, rem explicabo
+                        excepturi id illo molestiae blanditiis, eligendi dicta
+                        officiis asperiores delectus quasi inventore debitis
+                        quo.
+                      </p>
+                    </Tab.Pane>
+                  </Tab.Content>
+                )}
+              </TrackVisibility>
             </Tab.Container>
           </Col>
         </Row>
