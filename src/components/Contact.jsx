@@ -27,16 +27,13 @@ export const Contact = () => {
     e.preventDefault();
     setButtonText("Sending...");
 
-    let response = await fetch(
-      "https://taynaparaquettportifolio.netlify.app/",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json;charset=utf-8",
-        },
-        body: JSON.stringify(formDetails),
-      }
-    );
+    let response = await fetch("/.netlify/functions/sendEmail", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(formDetails),
+    });
 
     setButtonText("Send");
     let result = await response.json();
